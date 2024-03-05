@@ -3,7 +3,6 @@
 //-----------------------------------------
 #ifndef EQUAL_PATHS_H
 #define EQUAL_PATHS_H
-
 #ifndef RECCHECK
 #include <cstdlib>
 #endif
@@ -27,6 +26,7 @@ struct Node {
  * 
  * @param root Pointer to the root of the tree to check for equal paths
  */
+int twoChildren(Node* parent, int count);
 bool equalPaths(Node * root);
 
 #endif

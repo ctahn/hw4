@@ -7,12 +7,53 @@
 using namespace std;
 
 
-// You may add any prototypes of helper functions here
+int twoChildren(Node* parent)
+{
+  if(parent->left == nullptr && parent->right == nullptr){
+    return 1;
+  }
+  else if(parent->left == nullptr && parent->right != nullptr){
+    return twoChildren(parent->right)+1;
+  }
+  else if(parent->left != nullptr && parent->right == nullptr){
+    return twoChildren(parent->left)+1;
+  }
+  else{
+    return twoChildren(parent->left)+1;
+  }
+}
 
 
 bool equalPaths(Node * root)
 {
-    // Add your code below
-
+  bool answer = true;
+  if(root == nullptr){
+    return answer;
+  }
+  if(root->left != nullptr){
+    if(!answer){
+      return false;
+    }
+    answer = equalPaths(root->left);
+  }
+  if(root->right != nullptr){
+    if(!answer){
+      return false;
+    }
+    answer = equalPaths(root->right);
+  }
+  if(root->left != nullptr && root->right != nullptr){
+    if(!answer){
+      return false;
+    }
+    int left = 0;
+    int right = 0;
+    left = twoChildren(root->left);
+    right = twoChildren(root->right);
+    if(left != right){
+      answer = false;
+    }
+  }
+  return answer;
 }
 
