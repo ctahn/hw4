@@ -1,11 +1,14 @@
+#ifndef PRINT_BST_H
+#define PRINT_BST_H
+
 #include <cmath>
 #include <iomanip>
 #include <map>
 #include <vector>
 #include <cstdint>
+#include "bst.h"
 
-#ifndef PRINT_BST_H
-#define PRINT_BST_H
+
 
 // BST pretty-print function
 // Version 1.2
@@ -272,7 +275,7 @@ void BinarySearchTree<Key, Value>::printRoot (Node<Key, Value>* root) const
             // print element with original cout flags
             std::cout.flags(origCoutState);
             std::cout << '(' << placeholdersIter->first << ", ";
-
+            
             typename BinarySearchTree<Key, Value>::iterator elementIter = this->find(placeholdersIter->first);
             if(elementIter == this->end())
             {

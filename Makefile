@@ -6,7 +6,7 @@ CXXFLAGS=-g -Wall -std=c++11
 
 all: bst-test equal-paths-test
 
-bst-test: bst-test.cpp bst.h avlbst.h
+bst-test: bst-test.cpp bst.h avlbst.h print_bst.h
 	$(CXX) $(CXXFLAGS) $(DEFS) $< -o $@
 
 # Brute force recompile all files each time
