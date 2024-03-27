@@ -127,7 +127,7 @@ Value& Node<Key, Value>::getValue()
 template<typename Key, typename Value>
 Node<Key, Value>* Node<Key, Value>::getParent() const
 {
-    return (*this).parent_;
+    return this->parent_;
 }
 
 /**
